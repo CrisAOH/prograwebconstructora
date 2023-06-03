@@ -1,5 +1,5 @@
 <?php
-require_once("sistema.php");
+require_once(__DIR__."/sistema.php");
 
 /**
  * Controller Departamento
@@ -83,5 +83,5 @@ class Departamento extends Sistema
     }
 
 }
-$web = new Departamento;
+$departamento = new Departamento;
 ?>

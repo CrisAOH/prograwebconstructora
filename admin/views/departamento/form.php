@@ -5,7 +5,8 @@
   <div class="mb-3">
     <label class="form-label">Nombre del Departamento</label>
     <input type="text" name="data[departamento]" class="form-control" placeholder="Departamento"
-      value="<?php echo isset($data[0]['departamento']) ? $data[0]['departamento'] : ''; ?>" required minlength="3" maxlength="50" />
+      value="<?php echo isset($data[0]['departamento']) ? $data[0]['departamento'] : ''; ?>" required minlength="3"
+      maxlength="50" />
   </div>
   <div class="mb-3">
     <?php if ($action == 'edit'): ?>

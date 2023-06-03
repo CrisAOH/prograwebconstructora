@@ -1,9 +1,13 @@
 <?php
-require_once('config.php');
-$l = DBDRIVER.':host='.DBHOST.';dbname='.DBNAME.';port='.DBPORT;
-$db = new PDO($l,DBUSER,DBPASS);
-$prep2 = $db->prepare("select * from departamento");
-$prep2->execute();
-$result = $prep2->fetchAll();
-print_r($result);
+declare(strict_types=1);
+require_once(__DIR__ . "/controllers/factura.php");
+require_once("../vendor/autoload.php");
+header('Content-Type: application/json; charset=utf-8');
+use PhpCfdi\CfdiToJson\JsonConverter;
+
+$contents = file_get_contents('facturas/VES150827JW60.xml');
+$json = JsonConverter::convertToJson($contents);
+echo $json;
+$cantidad = $factura->new($json);
+echo($cantidad);
 ?>

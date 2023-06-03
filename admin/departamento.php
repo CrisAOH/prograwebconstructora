@@ -1,23 +1,24 @@
 <?php
 /**
-* Enrutador departamento
-*/
-require_once("controllers/departamento.php");
+ * Enrutador departamento
+ */
+require_once(__DIR__."/controllers/departamento.php");
 include_once('views/header.php');
 include_once('views/menu.php');
+$departamento -> validateRol('Administrador');
 $action = (isset($_GET['action'])) ? $_GET['action'] : 'get';
 $id = (isset($_GET['id'])) ? $_GET['id'] : null;
 switch ($action) {
     case 'new':
         if (isset($_POST['enviar'])) {
             $data = $_POST['data'];
-            $cantidad = $web->new($data);
+            $cantidad = $departamento->new($data);
             if ($cantidad) {
-                $web->flash('success', "Registro dado de alta con éxito");
-                $data = $web->get();
+                $departamento->flash('success', "Registro dado de alta con éxito");
+                $data = $departamento->get();
                 include('views/departamento/index.php');
             } else {
-                $web->flash('danger', "Algo fallo");
+                $departamento->flash('danger', "Algo salió mal.");
                 include('views/departamento/form.php');
             }
         } else {
@@ -28,36 +29,36 @@ switch ($action) {
         if (isset($_POST['enviar'])) {
             $data = $_POST['data'];
             $id = $_POST['data']['id_departamento'];
-            $cantidad = $web->edit($id, $data);
+            $cantidad = $departamento->edit($id, $data);
             if ($cantidad) {
-                $web->flash('success', "Registro actualizado con éxito");
-                $data = $web->get();
+                $departamento->flash('success', "Registro actualizado con éxito");
+                $data = $departamento->get();
                 include('views/departamento/index.php');
             } else {
-                $web->flash('warning', "Algo fallo o no hubo cambios");
-                $data = $web->get();
+                $departamento->flash('warning', "Algo falló o no hubo cambios");
+                $data = $departamento->get();
                 include('views/departamento/index.php');
             }
         } else {
-            $data = $web->get($id);
+            $data = $departamento->get($id);
             include('views/departamento/form.php');
         }
         break;
     case 'delete':
-        $cantidad = $web->delete($id);
+        $cantidad = $departamento->delete($id);
         if ($cantidad) {
-            $web->flash('success', "Registro eliminado con éxito");
-            $data = $web->get();
+            $departamento->flash('success', "Registro eliminado con éxito");
+            $data = $departamento->get();
             include('views/departamento/index.php');
         } else {
-            $web->flash('danger', "Algo fallo");
-            $data = $web->get();
+            $departamento->flash('danger', "Algo fallo");
+            $data = $departamento->get();
             include('views/departamento/index.php');
         }
         break;
     case 'get':
     default:
-        $data = $web->get($id);
+        $data = $departamento->get($id);
         include("views/departamento/index.php");
 }
 include_once('views/footer.php');

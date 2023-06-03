@@ -8,10 +8,10 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <a class="nav-link active" aria-current="page" href="index.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" href="views/paypal/index.php">PayPal</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -20,14 +20,41 @@
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="departamento.php">Departamentos</a></li>
             <li><a class="dropdown-item" href="proyecto.php">Proyectos</a></li>
+            <li><a class="dropdown-item" href="caso.php">Casos de éxito</a></li>
             <li>
               <hr class="dropdown-divider">
             </li>
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
         </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Factura
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="factura.php">Facturas</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            usuarios 
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="usuario.php">usuarios</a></li>
+            <li><a class="dropdown-item" href="rol.php">Roles</a></li>
+            <li><a class="dropdown-item" href="privilegio.php">Privilegios</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="empleado.php">Empleados</a></li>
+          </ul>
+        </li>
         <li class="nav-item">
-          <a class="nav-link disabled">Disabled</a>
+          <a class="nav-link" href="login.php?action=logout">Logout</a>
         </li>
       </ul>
       <form class="d-flex" role="search">
